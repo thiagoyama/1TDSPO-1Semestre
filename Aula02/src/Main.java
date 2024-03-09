@@ -27,5 +27,14 @@ public class Main {
         //Chamar os métodos
         cao.andar();
         dogBelga.andar();
+
+        //Chamar o método para calcular a dose do remedio 1 a cada 7 kg
+        float doseBelga = dogBelga.calcularDose(5);
+        System.out.println("Doses necessárias: " + doseBelga);
+
+        //Calcular e exibir a idade humada do dog
+        int idadeDogReal = dogBelga.calcularIdade();
+        System.out.println("Idade humana: " + idadeDogReal);
+
     }
 }
