@@ -5,6 +5,12 @@ public class Funcionario extends Pessoa {
     private String cargo;
     private double salario;
 
+    public Funcionario(int id, String nome, String cpf, Endereco endereco, String cargo, double salario){
+        super(id, nome, cpf, endereco); //Chamar o construtor do pai
+        this.cargo = cargo;
+        this.salario = salario;
+    }
+
     public String getCargo() {
         return cargo;
     }

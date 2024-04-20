@@ -4,6 +4,11 @@ public class Cliente extends Pessoa {
 
     private boolean assinante;
 
+    public Cliente(int codigo, String nome, String cpf, Endereco endereco, boolean assinante){
+        super(codigo, nome, cpf, endereco);
+        this.assinante = assinante;
+    }
+
     public void pagar(double valor){
         //Se for assinante tem 10% de desconto
         if (assinante)

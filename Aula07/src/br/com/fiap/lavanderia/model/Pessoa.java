@@ -5,8 +5,19 @@ public class Pessoa {
     private int id;
     protected String nome;
     private String cpf;
+    private Endereco endereco;
 
-    public int getId() {
+    //Criar um construtor com todos os atributos
+    public Pessoa(int id, String nome, String cpf, Endereco endereco) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+    }
+
+
+
+   public int getId() {
         return id;
     }
 
@@ -28,5 +39,13 @@ public class Pessoa {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }
