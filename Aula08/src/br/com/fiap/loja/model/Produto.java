@@ -5,11 +5,13 @@ public class Produto {
     private int id;
     private String nome;
     private String descricao;
-    private double preco;
+    protected double preco;
 
     private float peso;
 
-    public Produto(){}
+    public Produto(){
+        super();
+    }
 
     public Produto(int id, String nome, String descricao, double preco, float peso) {
         this.id = id;
@@ -17,6 +19,13 @@ public class Produto {
         this.descricao = descricao;
         this.preco = preco;
         this.peso = peso;
+    }
+
+    //Sobrescreve o método chamado quando o objeto é impresso (System.out ou JOption)
+    @Override
+    public String toString() {
+        return "Id: "  + id + "\nNome: " + nome + "\nDescrição: " + descricao
+                + "\nPreço: " + preco + "\nPeso: " + peso;
     }
 
     //Sobrecarga de métodos: métodos na mesma classe, com o mesmo nome e parametros diferentes
@@ -29,7 +38,7 @@ public class Produto {
             return calcularPrecoComDesconto(10.0) * quantidade;
         if (quantidade > 9)
             return calcularPrecoComDesconto(20.0) * quantidade;
-        return preco;
+        return preco * quantidade;
     }
 
     //FIAP25 dá 25% de desconto, FIAP40 dá 40% de desconto
