@@ -1,20 +1,20 @@
 package br.com.fiap.faculdade.model;
 
-public class Formacao {
+//Classe abstrata -> não pode ser instanciada
+// e pode conter métodos abstratos
+public abstract class Formacao {
 
-    private String descricao;
+    protected String descricao;
 
-    private int periodo;
+    private TipoPeriodo periodo;
 
-    private double mensalidade;
+    protected double mensalidade;
 
-    private int duracao;
+    protected int duracao;
 
-    public Formacao(String descricao, int periodo, double mensalidade, int duracao) {
+    public Formacao(String descricao, TipoPeriodo periodo) {
         this.descricao = descricao;
         this.periodo = periodo;
-        this.mensalidade = mensalidade;
-        this.duracao = duracao;
     }
 
     public Formacao() {}
@@ -27,9 +27,9 @@ public class Formacao {
                 "\nDuracao: " + duracao;
     }
 
-    public void definirDuracao(){
 
-    }
+    //Método abstrato -> sem implementação
+    public abstract void definirDuracao();
 
     public double calcularMedia(double global1, double global2){
         return global1 * 0.4 + global2 * 0.6;
@@ -63,11 +63,11 @@ public class Formacao {
         this.descricao = descricao;
     }
 
-    public int getPeriodo() {
+    public TipoPeriodo getPeriodo() {
         return periodo;
     }
 
-    public void setPeriodo(int periodo) {
+    public void setPeriodo(TipoPeriodo periodo) {
         this.periodo = periodo;
     }
 
@@ -75,15 +75,8 @@ public class Formacao {
         return mensalidade;
     }
 
-    public void setMensalidade(double mensalidade) {
-        this.mensalidade = mensalidade;
-    }
-
     public int getDuracao() {
         return duracao;
     }
 
-    public void setDuracao(int duracao) {
-        this.duracao = duracao;
-    }
 }

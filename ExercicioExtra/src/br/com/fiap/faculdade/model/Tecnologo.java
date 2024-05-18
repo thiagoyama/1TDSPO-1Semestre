@@ -4,14 +4,19 @@ public class Tecnologo extends Formacao {
 
     private boolean planoEstendido;
 
-    public double calcularMensalidade(double fator){
+    @Override
+    public void definirDuracao() {
+        duracao = 24;
+    }
 
+    public double calcularMensalidade(double fator){
+        return mensalidade = getDuracao() * fator * 600;
     }
 
     public Tecnologo() {}
 
-    public Tecnologo(String descricao, int periodo, double mensalidade, int duracao, boolean planoEstendido) {
-        super(descricao, periodo, mensalidade, duracao);
+    public Tecnologo(String descricao, TipoPeriodo periodo, boolean planoEstendido) {
+        super(descricao, periodo);
         this.planoEstendido = planoEstendido;
     }
 
